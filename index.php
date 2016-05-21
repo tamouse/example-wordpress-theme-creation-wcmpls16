@@ -1,9 +1,8 @@
 <?php
 
-wp_head();
+get_header();
 
 
 echo "<h1> demo theme working </h1>";
 
-
-wp_footer();
+get_footer();
