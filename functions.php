@@ -108,6 +108,14 @@ function position_taxonomy() {
         'show_admin_column'          => true,
         'show_in_nav_menus'          => true,
         'show_tagcloud'              => true,
+        // is this how you get a check box for the position?
+/*        'capabilities'               => array(
+            'manage_terms'  => 'manage_position',
+            'edit_terms'    => 'manage_position',
+            'assign_terms'  => 'edit_position',
+        ),*/
+        // no, apperently not
+        // is this even the right way to do this -- an employee should only be able to have one position, how can that be limited?
     );
     
     // the name given to `register_taxonomy` will be used to link the post types given in the array
