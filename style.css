@@ -11,3 +11,8 @@
     padding: 20px;
 }
 
+.jumbotron-danger {
+    background-color: lightpink;
+    border: 1px solid darkred;
+    box-shadow: 2px 2px;
+}
