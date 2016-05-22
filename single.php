@@ -10,7 +10,7 @@ if ( have_posts() ) :
             </a>
         </h2>
         <div>
-            <?php the_excerpt(); ?>
+            <?php the_content(); ?>
         </div>
         <p>Posted on: <?php the_date(); ?> at: <?php the_time(); ?></p>
         <?php
