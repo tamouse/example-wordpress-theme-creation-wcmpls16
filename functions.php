@@ -1,5 +1,11 @@
 <?php
 
+// this is the magic that allows our custom theme's styles and scripts to get added to the page.
+// they will come out during wp_head() call.
+//
+// I wonder how one might have js inclusion happen at the bottom of the page...
+//
+
 function demo_theme_name_scripts() {
     wp_enqueue_style( 'demo-style', get_stylesheet_uri() );
     // no JS at this point
@@ -43,6 +49,10 @@ function employee_post_type() {
         'description'           => __( 'Employee', 'text_domain' ),
         'labels'                => $labels,
         'supports'              => array( 'title', 'editor', 'thumbnail', ),
+        
+        // the array must contain taxonomies defined elsewhere.
+        // the string must match the name given to the taxonomy
+        // in the `register_taxonomy()` function call in the taxonomy.
         'taxonomies'            => array( 'position' ),
         'hierarchical'          => false,
         'public'                => true,
@@ -57,9 +67,12 @@ function employee_post_type() {
         'publicly_queryable'    => true,
         'capability_type'       => 'page',
     );
+    
+    // the name given to the post type will be used as an identifier for linking taxonomies
     register_post_type( 'employee', $args );
 
 }
+// the function name created above for the new post type
 add_action( 'init', 'employee_post_type', 10 );
 
 // Register Custom Taxonomy
@@ -96,7 +109,10 @@ function position_taxonomy() {
         'show_in_nav_menus'          => true,
         'show_tagcloud'              => true,
     );
+    
+    // the name given to `register_taxonomy` will be used to link the post types given in the array
     register_taxonomy( 'position', array( 'employee' ), $args );
 
 }
+// the function name created above
 add_action( 'init', 'position_taxonomy', 10 );
