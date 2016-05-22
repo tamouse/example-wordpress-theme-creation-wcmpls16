@@ -7,6 +7,8 @@
     <!-- mmmmm bootstrappy goodness -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- starting php wp_head -->
 <?php 
     
 // add this at the end of the <head> block in order to bring in all the wordpress goodness
@@ -14,6 +16,7 @@
 wp_head(); 
 
 ?>
+<!--    ending php wp_head -->
 </head>
 <body>
 <header>

@@ -102,7 +102,10 @@ function position_taxonomy() {
     );
     $args = array(
         'labels'                     => $labels,
-        'hierarchical'               => false,
+
+        // making the taxonomy hierarchical sets up the checkbox to select the position
+        // in the metabox on the edit page.
+        'hierarchical'               => true,
         'public'                     => true,
         'show_ui'                    => true,
         'show_admin_column'          => true,
@@ -115,7 +118,9 @@ function position_taxonomy() {
             'assign_terms'  => 'edit_position',
         ),*/
         // no, apperently not
-        // is this even the right way to do this -- an employee should only be able to have one position, how can that be limited?
+        // is this even the right way to do this -- an employee should only be able to have one
+        // position, how can that be limited?
+        // Turns out NO -- but it is something that can be done with CMB2.
     );
     
     // the name given to `register_taxonomy` will be used to link the post types given in the array
