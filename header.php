@@ -18,7 +18,16 @@ wp_head();
 ?>
 <!--    ending php wp_head -->
 </head>
-<body>
+<body <?php
+
+// oh this is so smart! Only put a logged-in class on the body when a user is logged in, and
+// do special CSS formatting in that case.
+// see https://codex.wordpress.org/Function_Reference/get_current_user_id
+if (0 !== get_current_user_id ()) {
+    echo "class=\"logged-in\"";
+}
+
+?>>
 <header>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
